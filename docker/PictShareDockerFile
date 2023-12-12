@@ -1,0 +1,7 @@
+FROM ghcr.io/hascheksolutions/pictshare
+
+# Install NFS utilities on Alpine Linux
+RUN apk --no-cache add nfs-utils
+
+# Mount the NFS share (adjust the IP and path accordingly)
+CMD mount -t nfs 192.168.92.30:/share-data /var/www/data 
